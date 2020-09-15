@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B2648937FA95C75FF87B984 /* Pods_DoodleRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6D7CCC6D43D2DCDF1F0D51 /* Pods_DoodleRecognizer.framework */; };
 		848952D0250FC8D400B48058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952CF250FC8D400B48058 /* AppDelegate.swift */; };
 		848952D2250FC8D400B48058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952D1250FC8D400B48058 /* SceneDelegate.swift */; };
 		848952D4250FC8D400B48058 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952D3250FC8D400B48058 /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 		848952D8250FC8DA00B48058 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		848952DB250FC8DA00B48058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848952DD250FC8DA00B48058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9631937B0FC13F14A021018D /* Pods-DoodleRecognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoodleRecognizer.debug.xcconfig"; path = "Target Support Files/Pods-DoodleRecognizer/Pods-DoodleRecognizer.debug.xcconfig"; sourceTree = "<group>"; };
+		E50A8706BA0CF89588F8E3A4 /* Pods-DoodleRecognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoodleRecognizer.release.xcconfig"; path = "Target Support Files/Pods-DoodleRecognizer/Pods-DoodleRecognizer.release.xcconfig"; sourceTree = "<group>"; };
+		EB6D7CCC6D43D2DCDF1F0D51 /* Pods_DoodleRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoodleRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2648937FA95C75FF87B984 /* Pods_DoodleRecognizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				848952CE250FC8D400B48058 /* DoodleRecognizer */,
 				848952CD250FC8D400B48058 /* Products */,
+				FBDE5486F5FE7EF058741B60 /* Pods */,
+				F1C40B7D65FBE12AE858A9E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = DoodleRecognizer;
 			sourceTree = "<group>";
 		};
+		F1C40B7D65FBE12AE858A9E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB6D7CCC6D43D2DCDF1F0D51 /* Pods_DoodleRecognizer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBDE5486F5FE7EF058741B60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9631937B0FC13F14A021018D /* Pods-DoodleRecognizer.debug.xcconfig */,
+				E50A8706BA0CF89588F8E3A4 /* Pods-DoodleRecognizer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 848952E0250FC8DA00B48058 /* Build configuration list for PBXNativeTarget "DoodleRecognizer" */;
 			buildPhases = (
+				DEB32E697DC1590A285C9251 /* [CP] Check Pods Manifest.lock */,
 				848952C8250FC8D400B48058 /* Sources */,
 				848952C9250FC8D400B48058 /* Frameworks */,
 				848952CA250FC8D400B48058 /* Resources */,
+				87E9431E06ECBD3E618A897E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87E9431E06ECBD3E618A897E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoodleRecognizer/Pods-DoodleRecognizer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoodleRecognizer/Pods-DoodleRecognizer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DoodleRecognizer/Pods-DoodleRecognizer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEB32E697DC1590A285C9251 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoodleRecognizer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		848952C8250FC8D400B48058 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		848952E1250FC8DA00B48058 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9631937B0FC13F14A021018D /* Pods-DoodleRecognizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +371,7 @@
 		};
 		848952E2250FC8DA00B48058 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E50A8706BA0CF89588F8E3A4 /* Pods-DoodleRecognizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
