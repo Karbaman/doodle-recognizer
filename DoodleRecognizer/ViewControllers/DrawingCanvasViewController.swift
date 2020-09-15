@@ -8,6 +8,7 @@ import RxCocoa
 
 final class DrawingCanvasViewController: UIViewController {
     
+    let imageClassifier = ImageClassifier()
     let canvasChanges:PublishRelay<Void> = PublishRelay()
     let disposeBag = DisposeBag()
     
@@ -59,6 +60,10 @@ final class DrawingCanvasViewController: UIViewController {
     }
     
     func setupRx() {
+        imageClassifier.result.subscribe(onNext: { (value) in
+            self.predictionResultLabel.text = value
+            }).disposed(by: disposeBag)
+        
         canvasChanges
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe(onNext: { Void in
@@ -76,7 +81,8 @@ final class DrawingCanvasViewController: UIViewController {
     }
     
     func finishDrawing() {
-        //TODO: call a model to recognize the result image
+        let image = getDrawingImage().withBackground(color: UIColor.white)
+        imageClassifier.classify(image: image)
     }
     
     func shareImage() {
@@ -98,7 +104,6 @@ final class DrawingCanvasViewController: UIViewController {
         let image = canvasView.drawing.image(from: drawingRect, scale: UIScreen.main.scale * 1.0)
         return image
     }
-    
 }
 
 extension DrawingCanvasViewController: PKCanvasViewDelegate {

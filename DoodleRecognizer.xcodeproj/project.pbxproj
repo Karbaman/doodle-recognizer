@@ -15,6 +15,10 @@
 		848952DC250FC8DA00B48058 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848952DA250FC8DA00B48058 /* LaunchScreen.storyboard */; };
 		848952EE2510966900B48058 /* DrawingCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952ED2510966900B48058 /* DrawingCanvasViewController.swift */; };
 		848952F725109BFF00B48058 /* CGRect+boundingSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952F425109BFF00B48058 /* CGRect+boundingSquare.swift */; };
+		848952FA2510BCA900B48058 /* UIImage+mergeWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952F82510BCA900B48058 /* UIImage+mergeWith.swift */; };
+		848952FB2510BCA900B48058 /* UIImage+withBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952F92510BCA900B48058 /* UIImage+withBackground.swift */; };
+		848952FE2510BD2900B48058 /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952FD2510BD2900B48058 /* ImageClassifier.swift */; };
+		848953002510D3AF00B48058 /* QuickDraw4 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 848952FF2510D3AF00B48058 /* QuickDraw4 1.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		848952DD250FC8DA00B48058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848952ED2510966900B48058 /* DrawingCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasViewController.swift; sourceTree = "<group>"; };
 		848952F425109BFF00B48058 /* CGRect+boundingSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+boundingSquare.swift"; sourceTree = "<group>"; };
+		848952F82510BCA900B48058 /* UIImage+mergeWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+mergeWith.swift"; sourceTree = "<group>"; };
+		848952F92510BCA900B48058 /* UIImage+withBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+withBackground.swift"; sourceTree = "<group>"; };
+		848952FD2510BD2900B48058 /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
+		848952FF2510D3AF00B48058 /* QuickDraw4 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "QuickDraw4 1.mlmodel"; sourceTree = "<group>"; };
 		9631937B0FC13F14A021018D /* Pods-DoodleRecognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoodleRecognizer.debug.xcconfig"; path = "Target Support Files/Pods-DoodleRecognizer/Pods-DoodleRecognizer.debug.xcconfig"; sourceTree = "<group>"; };
 		E50A8706BA0CF89588F8E3A4 /* Pods-DoodleRecognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoodleRecognizer.release.xcconfig"; path = "Target Support Files/Pods-DoodleRecognizer/Pods-DoodleRecognizer.release.xcconfig"; sourceTree = "<group>"; };
 		EB6D7CCC6D43D2DCDF1F0D51 /* Pods_DoodleRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoodleRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,11 +73,12 @@
 		848952CE250FC8D400B48058 /* DoodleRecognizer */ = {
 			isa = PBXGroup;
 			children = (
-				848952F125109BFF00B48058 /* Extensions */,
-				848952EA2510954700B48058 /* Views */,
-				848952EC251095B100B48058 /* ViewControllers */,
 				848952CF250FC8D400B48058 /* AppDelegate.swift */,
 				848952D1250FC8D400B48058 /* SceneDelegate.swift */,
+				848952FC2510BD0000B48058 /* Models */,
+				848952EA2510954700B48058 /* Views */,
+				848952EC251095B100B48058 /* ViewControllers */,
+				848952F125109BFF00B48058 /* Extensions */,
 				848952D8250FC8DA00B48058 /* Assets.xcassets */,
 				848952DD250FC8DA00B48058 /* Info.plist */,
 			);
@@ -97,8 +106,19 @@
 			isa = PBXGroup;
 			children = (
 				848952F425109BFF00B48058 /* CGRect+boundingSquare.swift */,
+				848952F82510BCA900B48058 /* UIImage+mergeWith.swift */,
+				848952F92510BCA900B48058 /* UIImage+withBackground.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		848952FC2510BD0000B48058 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				848952FD2510BD2900B48058 /* ImageClassifier.swift */,
+				848952FF2510D3AF00B48058 /* QuickDraw4 1.mlmodel */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F1C40B7D65FBE12AE858A9E3 /* Frameworks */ = {
@@ -236,6 +256,10 @@
 				848952F725109BFF00B48058 /* CGRect+boundingSquare.swift in Sources */,
 				848952D0250FC8D400B48058 /* AppDelegate.swift in Sources */,
 				848952EE2510966900B48058 /* DrawingCanvasViewController.swift in Sources */,
+				848952FB2510BCA900B48058 /* UIImage+withBackground.swift in Sources */,
+				848953002510D3AF00B48058 /* QuickDraw4 1.mlmodel in Sources */,
+				848952FA2510BCA900B48058 /* UIImage+mergeWith.swift in Sources */,
+				848952FE2510BD2900B48058 /* ImageClassifier.swift in Sources */,
 				848952D2250FC8D400B48058 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
