@@ -10,23 +10,23 @@
 		5B2648937FA95C75FF87B984 /* Pods_DoodleRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6D7CCC6D43D2DCDF1F0D51 /* Pods_DoodleRecognizer.framework */; };
 		848952D0250FC8D400B48058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952CF250FC8D400B48058 /* AppDelegate.swift */; };
 		848952D2250FC8D400B48058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952D1250FC8D400B48058 /* SceneDelegate.swift */; };
-		848952D4250FC8D400B48058 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952D3250FC8D400B48058 /* ViewController.swift */; };
 		848952D7250FC8D400B48058 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848952D5250FC8D400B48058 /* Main.storyboard */; };
 		848952D9250FC8DA00B48058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848952D8250FC8DA00B48058 /* Assets.xcassets */; };
 		848952DC250FC8DA00B48058 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848952DA250FC8DA00B48058 /* LaunchScreen.storyboard */; };
 		848952EE2510966900B48058 /* DrawingCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952ED2510966900B48058 /* DrawingCanvasViewController.swift */; };
+		848952F725109BFF00B48058 /* CGRect+boundingSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952F425109BFF00B48058 /* CGRect+boundingSquare.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		848952CC250FC8D400B48058 /* DoodleRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoodleRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848952CF250FC8D400B48058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848952D1250FC8D400B48058 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		848952D3250FC8D400B48058 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		848952D6250FC8D400B48058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848952D8250FC8DA00B48058 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		848952DB250FC8DA00B48058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848952DD250FC8DA00B48058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848952ED2510966900B48058 /* DrawingCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasViewController.swift; sourceTree = "<group>"; };
+		848952F425109BFF00B48058 /* CGRect+boundingSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+boundingSquare.swift"; sourceTree = "<group>"; };
 		9631937B0FC13F14A021018D /* Pods-DoodleRecognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoodleRecognizer.debug.xcconfig"; path = "Target Support Files/Pods-DoodleRecognizer/Pods-DoodleRecognizer.debug.xcconfig"; sourceTree = "<group>"; };
 		E50A8706BA0CF89588F8E3A4 /* Pods-DoodleRecognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoodleRecognizer.release.xcconfig"; path = "Target Support Files/Pods-DoodleRecognizer/Pods-DoodleRecognizer.release.xcconfig"; sourceTree = "<group>"; };
 		EB6D7CCC6D43D2DCDF1F0D51 /* Pods_DoodleRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoodleRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,11 +65,11 @@
 		848952CE250FC8D400B48058 /* DoodleRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				848952F125109BFF00B48058 /* Extensions */,
 				848952EA2510954700B48058 /* Views */,
 				848952EC251095B100B48058 /* ViewControllers */,
 				848952CF250FC8D400B48058 /* AppDelegate.swift */,
 				848952D1250FC8D400B48058 /* SceneDelegate.swift */,
-				848952D3250FC8D400B48058 /* ViewController.swift */,
 				848952D8250FC8DA00B48058 /* Assets.xcassets */,
 				848952DD250FC8DA00B48058 /* Info.plist */,
 			);
@@ -91,6 +91,14 @@
 				848952ED2510966900B48058 /* DrawingCanvasViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		848952F125109BFF00B48058 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				848952F425109BFF00B48058 /* CGRect+boundingSquare.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F1C40B7D65FBE12AE858A9E3 /* Frameworks */ = {
@@ -225,7 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848952D4250FC8D400B48058 /* ViewController.swift in Sources */,
+				848952F725109BFF00B48058 /* CGRect+boundingSquare.swift in Sources */,
 				848952D0250FC8D400B48058 /* AppDelegate.swift in Sources */,
 				848952EE2510966900B48058 /* DrawingCanvasViewController.swift in Sources */,
 				848952D2250FC8D400B48058 /* SceneDelegate.swift in Sources */,

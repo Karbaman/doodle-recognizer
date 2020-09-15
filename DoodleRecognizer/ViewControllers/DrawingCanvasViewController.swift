@@ -27,6 +27,9 @@ final class DrawingCanvasViewController: UIViewController {
         return label
     }()
     
+    let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: nil, action: nil)
+    let shareButton = UIBarButtonItem(barButtonSystemItem: .save, target: nil, action: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -34,6 +37,8 @@ final class DrawingCanvasViewController: UIViewController {
     }
     
     func setupViews() {
+        navigationItem.rightBarButtonItems = [clearButton]
+        navigationItem.leftBarButtonItems = [shareButton]
         
         view.addSubview(canvasView)
         canvasView.snp.makeConstraints { make in
@@ -60,11 +65,40 @@ final class DrawingCanvasViewController: UIViewController {
                 self.finishDrawing()
             })
             .disposed(by: disposeBag)
+        
+        clearButton.rx.tap.bind { _ in
+            self.clearCanvas()
+        }.disposed(by: disposeBag)
+        
+        shareButton.rx.tap.bind { _ in
+            self.shareImage()
+        }.disposed(by: disposeBag)
     }
     
     func finishDrawing() {
         //TODO: call a model to recognize the result image
     }
+    
+    func shareImage() {
+        let imageShare = [ getDrawingImage() ]
+        let activityViewController = UIActivityViewController(activityItems: imageShare , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func clearCanvas() {
+        DispatchQueue.main.async {
+            self.canvasView.drawing = PKDrawing()
+            self.predictionResultLabel.text = ""
+        }
+    }
+    
+    func getDrawingImage() -> UIImage {
+        let drawingRect = canvasView.drawing.bounds.boundingSquare
+        let image = canvasView.drawing.image(from: drawingRect, scale: UIScreen.main.scale * 1.0)
+        return image
+    }
+    
 }
 
 extension DrawingCanvasViewController: PKCanvasViewDelegate {
