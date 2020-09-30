@@ -25,23 +25,12 @@ class ImageClassifier {
 
     func processClassifications(for request: VNRequest, error: Error?) {
         DispatchQueue.main.async {
-            guard let results = request.results else {
+            guard let classifications = request.results as? [VNClassificationObservation] else {
                 print("Unable to classify image.\n\(error!.localizedDescription)")
                 return
             }
-            guard let classifications = results as? [VNClassificationObservation] else {
-                print("Unexpected classification result.\n")
-                return
-            }
 
-            if classifications.isEmpty {
-                print("Nothing recognized.")
-            } else {
-                let topClassifications = classifications.prefix(4)
-                let descriptions = topClassifications.map { classification in
-                   return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
-                }
-                print("Classification:\n" + descriptions.joined(separator: "\n"))
+            if !classifications.isEmpty {
                 self.classificationResult.accept(classifications[0].identifier)
             }
         }
@@ -58,7 +47,7 @@ class ImageClassifier {
      let imageClassifier = ImageClassifier()
      
      imageClassifier.classificationResult.subscribe(onNext: { (value) in
-        self.predictionResultLabel.text = value
+        // use 'value'
         }).disposed(by: disposeBag)
      
      imageClassifier.classify(image: image)
