@@ -3,10 +3,13 @@ import UIKit
 import Vision
 import RxRelay
 
+/**
+ The ImageClassifier class classifies images using ML model
+ */
+
 class ImageClassifier {
-    
-    let result:PublishRelay<String> = PublishRelay();
-    
+    let classificationResult: PublishRelay<String> = PublishRelay()
+
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
             let model = try VNCoreMLModel(for: QuickDraw4_1().model)
@@ -19,29 +22,40 @@ class ImageClassifier {
             fatalError("Failed to load Vision ML model: \(error)")
         }
     }()
-    
+
     func processClassifications(for request: VNRequest, error: Error?) {
         DispatchQueue.main.async {
-            guard let results = request.results else {
-                print ("Unable to classify image.\n\(error!.localizedDescription)")
+            guard let classifications = request.results as? [VNClassificationObservation] else {
+                print("Unable to classify image.\n\(error!.localizedDescription)")
                 return
             }
-            let classifications = results as! [VNClassificationObservation]
-        
-            if classifications.isEmpty {
-                print("Nothing recognized.")
-            } else {
-                let topClassifications = classifications.prefix(4)
-                let descriptions = topClassifications.map { classification in
-                   return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
-                }
-                print("Classification:\n" + descriptions.joined(separator: "\n"))
-                self.result.accept(classifications[0].identifier)
+
+            if !classifications.isEmpty {
+                self.classificationResult.accept(classifications[0].identifier)
             }
         }
     }
+
+    /**
+     Classifies images. The classification process works asynchronously.
+     
+     
+     You need to subscribe to `classificationResult` observable to get the result of classification.
     
-    func classify(image:UIImage) {
+     Usage:
+     ~~~
+     let imageClassifier = ImageClassifier()
+     
+     imageClassifier.classificationResult.subscribe(onNext: { (value) in
+        // use 'value'
+        }).disposed(by: disposeBag)
+     
+     imageClassifier.classify(image: image)
+     ~~~
+      - Parameter image: The image to be classified
+     */
+
+    func classify(image: UIImage) {
         guard let ciImage = CIImage(image: image) else {
             fatalError("Unable to create \(CIImage.self) from \(image).")
         }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B2648937FA95C75FF87B984 /* Pods_DoodleRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6D7CCC6D43D2DCDF1F0D51 /* Pods_DoodleRecognizer.framework */; };
+		8430231F252372FD0076C020 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8430231E252372FD0076C020 /* .swiftlint.yml */; };
 		848952D0250FC8D400B48058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952CF250FC8D400B48058 /* AppDelegate.swift */; };
 		848952D2250FC8D400B48058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848952D1250FC8D400B48058 /* SceneDelegate.swift */; };
 		848952D7250FC8D400B48058 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848952D5250FC8D400B48058 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8430231D25236F660076C020 /* swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = swiftlint.sh; sourceTree = "<group>"; };
+		8430231E252372FD0076C020 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		848952CC250FC8D400B48058 /* DoodleRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoodleRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848952CF250FC8D400B48058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848952D1250FC8D400B48058 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,9 +55,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8430231C25236ED10076C020 /* BuildPhases */ = {
+			isa = PBXGroup;
+			children = (
+				8430231D25236F660076C020 /* swiftlint.sh */,
+			);
+			path = BuildPhases;
+			sourceTree = "<group>";
+		};
 		848952C3250FC8D400B48058 = {
 			isa = PBXGroup;
 			children = (
+				8430231E252372FD0076C020 /* .swiftlint.yml */,
 				848952CE250FC8D400B48058 /* DoodleRecognizer */,
 				848952CD250FC8D400B48058 /* Products */,
 				FBDE5486F5FE7EF058741B60 /* Pods */,
@@ -79,6 +91,7 @@
 				848952EA2510954700B48058 /* Views */,
 				848952EC251095B100B48058 /* ViewControllers */,
 				848952F125109BFF00B48058 /* Extensions */,
+				8430231C25236ED10076C020 /* BuildPhases */,
 				848952D8250FC8DA00B48058 /* Assets.xcassets */,
 				848952DD250FC8DA00B48058 /* Info.plist */,
 			);
@@ -150,6 +163,7 @@
 				848952C9250FC8D400B48058 /* Frameworks */,
 				848952CA250FC8D400B48058 /* Resources */,
 				87E9431E06ECBD3E618A897E /* [CP] Embed Pods Frameworks */,
+				8430231925236D4B0076C020 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -198,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8430231F252372FD0076C020 /* .swiftlint.yml in Resources */,
 				848952DC250FC8DA00B48058 /* LaunchScreen.storyboard in Resources */,
 				848952D9250FC8DA00B48058 /* Assets.xcassets in Resources */,
 				848952D7250FC8D400B48058 /* Main.storyboard in Resources */,
@@ -207,6 +222,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8430231925236D4B0076C020 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Users/Admin/Documents/work/github/doodle-recognizer/DoodleRecognizer/BuildPhases/swiftLint.sh\n";
+		};
 		87E9431E06ECBD3E618A897E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
